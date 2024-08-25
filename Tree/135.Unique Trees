@@ -1,0 +1,18 @@
+ TreeNode* rec(int n){
+           if(n <= 1){
+                return NULL;
+           } 
+
+           TreeNode* root = new TreeNode(n);
+
+           for(int i = n;i>=1;i--){
+               TreeNode* left = rec(i-1);
+               TreeNode* right = rec(n-i);
+
+               root->left = left;
+               root->right = right;
+           }
+
+
+           return root;
+    }
